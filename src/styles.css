@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+body{
+    margin: 0px;
+}
+
+md-toolbar-row {
+  justify-content: space-between;
+}
+
+p {
+  margin: 16px;
+}
+
+[md-raised-button] {
+  width: 100%;
+}
+
+md-grid-list {
+  max-width: 1403px;
+  margin: 16px;
+}
+
+
+.icon-20 {
+  font-size: 20px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
