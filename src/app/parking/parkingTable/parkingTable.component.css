@@ -1,0 +1,22 @@
+/*table parking*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.info{background-color:    rgba(49, 176, 213, 0.40)}
+.danger{background-color:  rgba(201, 48, 44, 0.40)}
+.success{background-color: rgba(68, 157, 68, 0.40)}
+.warning{background-color: rgba(236, 151, 31, 0.40)}
+.active{background-color:  #000}
+
+th {
+    background-color: #fecb00;
+    color: white;
+}
