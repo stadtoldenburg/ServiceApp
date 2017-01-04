@@ -1,21 +1,16 @@
+
 <div [class.m2app-dark]="isDarkTheme">
   <md-toolbar color="primary">
     <span>
       <md-icon class="icon-20">pets</md-icon>
       Stadt Oldenburg
     </span>
-    <span>
-    </span>
-    <span>
-    </span>
-    <span>
-    </span>
-    <span>
-    </span>
+    <span class="nav-menu-spacer"></span>
+   
     <a md-button routerLink="/home">Home</a>
 
-    <button md-icon-button [md-menu-trigger-for]="parking">
-      <md-icon>local_parking</md-icon>
+    <button md-button [md-menu-trigger-for]="parking">
+      Parking
     </button>
 
     <button  md-icon-button [md-menu-trigger-for]="menu">
@@ -25,7 +20,8 @@
 
                         <!--  Parking Menu-->
   <md-menu x-position="before" #parking="mdMenu">
-    <button md-menu-item routerLink="/parking" routerLinkActive="active">Parking</button>
+    <button md-menu-item routerLink="/parkingtable" routerLinkActive="active">table</button>
+    <button md-menu-item routerLink="/parkingmap" routerLinkActive="active">map</button>
   </md-menu>
                         <!--  Seting Menu-->
   <md-menu x-position="before" #menu="mdMenu">
@@ -34,9 +30,7 @@
     <!--<button md-menu-item>Help</button>-->
   </md-menu>
 
-
-
-
 <router-outlet></router-outlet>
+
 
 </div>

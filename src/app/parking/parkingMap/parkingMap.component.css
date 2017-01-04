@@ -1,0 +1,9 @@
+md-sidenav-layout {
+height: 100% !important;
+width: 100% !important;
+position: fixed !important;
+}
+
+md-sidenav {
+  width: 320px;
+}

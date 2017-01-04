@@ -9,15 +9,20 @@ import { MaterialModule } from '@angular/material';
 import { ServiceAppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ParkingComponent,SettingsDialog } from './parking/parking.component';
+import { ParkingComponent } from './parking/parking.component';
+import { ParkingMapComponent,SettingsDialog } from './parking/parkingMap';
+import { ParkingTableComponent } from './parking/parkingTable';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ParkingComponent,
-    SettingsDialog
-  ],
+    SettingsDialog,
+    ParkingMapComponent
+,
+    ParkingTableComponent
+],
    entryComponents: [
     ParkingComponent,
     SettingsDialog
