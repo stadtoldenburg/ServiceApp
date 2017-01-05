@@ -4,7 +4,14 @@
         <md-tab>
           <template md-tab-label>Details</template>
           
-           
+           <p>{{currentPark.Name}}</p>
+           <p><img src="./assets/img/pfeil-{{currentPark.Trend}}.gif"  height="30" width="30"/></p>
+           <div class="your-class">
+              <div>your content</div>
+              <div>your content</div>
+              <div>your content</div>
+            </div>
+
             <button md-raised-button (click)="sidenav.close()" color="accent">CLOSE</button>
          
         </md-tab>
@@ -18,8 +25,7 @@
     </md-sidenav>
     <!--<md-grid-list cols="4" rowHeight="200px">-->
       
-<div (click)="callService()">Test</div>
-  <div *ngFor="let parking of parkings">{{parking.name}}</div>
+
 <table>
   <tr>
     <th>Parkhaus-Name</th>
@@ -27,30 +33,13 @@
     <th>Trend</th>
     <th>Status</th>
   </tr>
-  <tr class="warning"  (click)="showParking()">
-    <td>Peter </td>
-    <td>Griffin</td>
-    <td>$100</td>
-    <td>$100</td>
+  <tr *ngFor="let park of Parkhaus" (click)="showPark(park)">
+    <td>{{park.Name}} </td>
+    <td>{{park.Gesamt-park.Aktuell}}</td>
+    <td > <img src="./assets/img/pfeil-{{park.Trend}}.gif"  height="15" width="15"/></td>
+    <td>{{park.Status}}</td>
   </tr>
-  <tr class="info">
-    <td>Lois</td>
-    <td>Griffin</td>
-    <td>$150</td>
-    <td>$100</td>
-  </tr>
-  <tr class="danger">
-    <td>Joe</td>
-    <td>Swanson</td>
-    <td>$300</td>
-    <td>$100</td>
-  </tr>
-  <tr class="success">
-    <td>Cleveland</td>
-    <td>Brown</td>
-    <td>$250</td>
-    <td>$100</td>
-</tr>
+  
 </table>
     <!--</md-grid-list>-->
   </md-sidenav-layout>
