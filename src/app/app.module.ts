@@ -13,6 +13,7 @@ import { ParkingComponent } from './parking/parking.component';
 import { ParkingMapComponent,SettingsDialog } from './parking/parkingMap';
 import { ParkingTableComponent } from './parking/parkingTable';
 
+import { CompaniesService } from './parking/service/parking.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,7 @@ import { ParkingTableComponent } from './parking/parkingTable';
     MaterialModule.forRoot(),
     ServiceAppRoutingModule
   ],
-  providers: [],
+  providers: [CompaniesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

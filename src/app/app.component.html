@@ -30,6 +30,8 @@
     <!--<button md-menu-item>Help</button>-->
   </md-menu>
 
+    Current URL is: <code>{{location.path()}}</code><br>
+    <!--Normalize: <code>/foo/bar/</code> is: <code>{{location.normalize('foo/bar')}}</code><br>-->
 <router-outlet></router-outlet>
 
 

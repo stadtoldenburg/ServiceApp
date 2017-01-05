@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewChild, ViewContainerRef } from '@angular/core';
+import {MdSidenav, MdDialog, MdDialogConfig} from "@angular/material";
+import { CompaniesService } from '../service/parking.service';
 
 @Component({
   selector: 'app-parkingTable',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parkingTable.component.css']
 })
 export class ParkingTableComponent implements OnInit {
-
-  constructor() { }
+@ViewChild('sidenav') sidenav: MdSidenav;
+ parkings:any;
+ 
+  constructor(private service:CompaniesService) {
+  }
 
   ngOnInit() {
   }
+showParking() {
+    this.sidenav.open();
+  }
 
+  callService() {
+    this.service.getCompanies().subscribe(
+      (parkings) => {
+        this.parkings = parkings.list.Company;
+        console.log(this.parkings);
+      });
+  }
 }

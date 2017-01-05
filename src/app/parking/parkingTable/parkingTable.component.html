@@ -1,27 +1,56 @@
+<md-sidenav-layout>
+    <md-sidenav align="end" mode="side" #sidenav>
+      <md-tab-group>
+        <md-tab>
+          <template md-tab-label>Details</template>
+          
+           
+            <button md-raised-button (click)="sidenav.close()" color="accent">CLOSE</button>
+         
+        </md-tab>
+        <md-tab>
+          <template md-tab-label>Feed</template>
+          
+            mahmoud
+          
+        </md-tab>
+      </md-tab-group>
+    </md-sidenav>
+    <!--<md-grid-list cols="4" rowHeight="200px">-->
+      
+<div (click)="callService()">Test</div>
+  <div *ngFor="let parking of parkings">{{parking.name}}</div>
 <table>
   <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Savings</th>
+    <th>Parkhaus-Name</th>
+    <th>Freie Plätze</th>
+    <th>Trend</th>
+    <th>Status</th>
   </tr>
-  <tr class="warning">
-    <td>Peter</td>
+  <tr class="warning"  (click)="showParking()">
+    <td>Peter </td>
     <td>Griffin</td>
+    <td>$100</td>
     <td>$100</td>
   </tr>
   <tr class="info">
     <td>Lois</td>
     <td>Griffin</td>
     <td>$150</td>
+    <td>$100</td>
   </tr>
   <tr class="danger">
     <td>Joe</td>
     <td>Swanson</td>
     <td>$300</td>
+    <td>$100</td>
   </tr>
   <tr class="success">
     <td>Cleveland</td>
     <td>Brown</td>
     <td>$250</td>
+    <td>$100</td>
 </tr>
 </table>
+    <!--</md-grid-list>-->
+  </md-sidenav-layout>
