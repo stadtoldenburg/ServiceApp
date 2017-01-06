@@ -3,22 +3,17 @@
       <md-tab-group>
         <md-tab>
           <template md-tab-label>Details</template>
-          
+          <div  *ngIf="!(currentPark.Name == null)" >
            <p>{{currentPark.Name}}</p>
            <p><img src="./assets/img/pfeil-{{currentPark.Trend}}.gif"  height="30" width="30"/></p>
-           <div class="your-class">
-              <div>your content</div>
-              <div>your content</div>
-              <div>your content</div>
-            </div>
-
+          </div>
             <button md-raised-button (click)="sidenav.close()" color="accent">CLOSE</button>
          
         </md-tab>
         <md-tab>
           <template md-tab-label>Feed</template>
           
-            mahmoud
+         
           
         </md-tab>
       </md-tab-group>
@@ -33,11 +28,11 @@
     <th>Trend</th>
     <th>Status</th>
   </tr>
-  <tr *ngFor="let park of Parkhaus" (click)="showPark(park)">
+  <tr *ngFor="let park of Parkhaus" (click)="showPark(park)" [hidden]="park.Name=='Ratsherren'|| park.Name=='Altes Gymnasium'" [ngClass]="park.Status | opencloseFilter " >
     <td>{{park.Name}} </td>
-    <td>{{park.Gesamt-park.Aktuell}}</td>
+    <td [ngClass]="park.Gesamt-park.Aktuell | freiplatyeFilter">{{park.Gesamt-park.Aktuell}}</td>
     <td > <img src="./assets/img/pfeil-{{park.Trend}}.gif"  height="15" width="15"/></td>
-    <td>{{park.Status}}</td>
+    <td [ngClass]="park.Status | statusFilter ">{{park.Status}}</td>
   </tr>
   
 </table>

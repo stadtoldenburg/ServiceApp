@@ -14,6 +14,8 @@ import { ParkingMapComponent,SettingsDialog } from './parking/parkingMap';
 import { ParkingTableComponent } from './parking/parkingTable';
 
 import { ParkingsService } from './parking/service/parking.service';
+
+import { ParkTablePipe } from './parking/parkingTable/pipe/parkTable-pipe.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,8 @@ import { ParkingsService } from './parking/service/parking.service';
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-    ServiceAppRoutingModule
+    ServiceAppRoutingModule,
+    ParkTablePipe
   ],
   providers: [ParkingsService],
   bootstrap: [AppComponent]

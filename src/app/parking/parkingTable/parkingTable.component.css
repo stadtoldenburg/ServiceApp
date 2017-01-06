@@ -8,11 +8,11 @@ th, td {
     text-align: left;
     padding: 8px;
 }
-.info{background-color:    rgba(49, 176, 213, 0.40)}
-.danger{background-color:  rgba(201, 48, 44, 0.40)}
-.success{background-color: rgba(68, 157, 68, 0.40)}
-.warning{background-color: rgba(236, 151, 31, 0.40)}
-.active{background-color:  #000}
+.info{background-color:    #d9edf7}
+.danger{background-color:  #f2dede}
+.success{background-color: #dff0d8}
+.warning{background-color: #fcf8e3}
+.active{background-color:  #FFFCFA}
 th {
     background-color: #fecb00;
     color: white;
@@ -27,4 +27,13 @@ position: fixed !important;
 
 md-sidenav {
   width: 320px;
+}
+.orange {
+    color: Orange;
+}
+.greene {
+     color: Green; 
+}
+.red {
+    color: Red;
 }

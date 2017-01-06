@@ -3,7 +3,7 @@ import {MdSidenav, MdDialog, MdDialogConfig} from "@angular/material";
 import { ParkingsService } from '../service/parking.service';
 import {Observable} from 'rxjs/Rx';
 
-
+declare var $:any;
 
 @Component({
   selector: 'app-parkingTable',
@@ -23,7 +23,7 @@ export class ParkingTableComponent implements OnInit {
 
   ngOnInit() {
     this.callService() ;
-    this.subscription = Observable.interval(2000).subscribe(x => {
+    this.subscription = Observable.interval(2000 * 60).subscribe(x => {
     this.callService();
   });
     
@@ -44,3 +44,4 @@ showPark(park) {
     this.subscription.unsubscribe();
   }
 }
+
