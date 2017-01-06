@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import {CommonModule} from "@angular/common";
 
-import {statusFilter, OpenCloseFilter, FreiPlatyeFilter} from "./table.pipe";
+import {statusFilter, OpenCloseFilter, FreiPlatzeFilter} from "./table.pipe";
 
 @NgModule({
-  declarations:[statusFilter,OpenCloseFilter,FreiPlatyeFilter],
+  declarations:[statusFilter,OpenCloseFilter,FreiPlatzeFilter],
   imports:[CommonModule],
-  exports:[statusFilter,OpenCloseFilter,FreiPlatyeFilter]
+  exports:[statusFilter,OpenCloseFilter,FreiPlatzeFilter]
 })
 
 export class ParkTablePipe{}

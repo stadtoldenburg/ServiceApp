@@ -28,9 +28,9 @@
     <th>Trend</th>
     <th>Status</th>
   </tr>
-  <tr *ngFor="let park of Parkhaus" (click)="showPark(park)" [hidden]="park.Name=='Ratsherren'|| park.Name=='Altes Gymnasium'" [ngClass]="park.Status | opencloseFilter " >
+  <tr *ngFor="let park of Parkhaus" (click)="showPark(park)" [hidden]="park.Name=='Ratsherren'|| park.Name=='Altes Gymnasium'" [ngClass]="park | opencloseFilter " >
     <td>{{park.Name}} </td>
-    <td [ngClass]="park.Gesamt-park.Aktuell | freiplatyeFilter">{{park.Gesamt-park.Aktuell}}</td>
+    <td [ngClass]="park.Gesamt-park.Aktuell | freiplatzeFilter">{{park.Gesamt-park.Aktuell}}</td>
     <td > <img src="./assets/img/pfeil-{{park.Trend}}.gif"  height="15" width="15"/></td>
     <td [ngClass]="park.Status | statusFilter ">{{park.Status}}</td>
   </tr>

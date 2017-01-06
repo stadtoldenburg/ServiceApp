@@ -7,27 +7,34 @@ import {Pipe,PipeTransform} from "@angular/core";
   pure: false
 })
 export class OpenCloseFilter  implements PipeTransform{
-   transform(status: string){
-       if (status === 'Geschlossen') {
-           return 'danger';
+
+   transform(park: any){
+       var parkclass:String;
+       if (!(park.Gesamt-park.Aktuell>20)){
+           parkclass = 'warning';
        }
+       
+       if (park.Status === 'Geschlossen') {
+           parkclass = 'danger';
+       }
+       return parkclass;
    }
 }
 
 
 @Pipe({
-  name: 'freiplatyeFilter',
+  name: 'freiplatzeFilter',
   pure: false
 })
-export class FreiPlatyeFilter  implements PipeTransform{
-   transform(status: any){
-       if (status > 20) {
+export class FreiPlatzeFilter  implements PipeTransform{
+   transform(FreiPlatze: any){
+       if (FreiPlatze > 20) {
            return 'greene';
        }
-       if (status >10 && status <= 20 ) {
+       if (FreiPlatze >10 && FreiPlatze <= 20 ) {
            return 'orange';
        }
-       if (status <= 10) {
+       if (FreiPlatze <= 10) {
            return 'red';
        }
    }
