@@ -5,7 +5,7 @@
           <template md-tab-label>Details</template>
           <div  *ngIf="!(currentPark.Name == null)" >
            <p>{{currentPark.Name}}</p>
-           <p><img src="./assets/img/pfeil-{{currentPark.Trend}}.gif"  height="30" width="30"/></p>
+           <p><img src="./assets/img/pfeil-{{currentPark.Trend}}.gif"  height="30" width="30"/>Freie Plätze: {{currentPark.Gesamt-currentPark.Aktuell}} Status: {{currentPark.Status}}</p>
           </div>
             <button md-raised-button (click)="sidenav.close()" color="accent">CLOSE</button>
          

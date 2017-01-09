@@ -9,11 +9,11 @@ import {Pipe,PipeTransform} from "@angular/core";
 export class OpenCloseFilter  implements PipeTransform{
 
    transform(park: any){
-       var parkclass:String;
-       if (!(park.Gesamt-park.Aktuell>20)){
+       let parkclass:String;
+       if (!(park.Gesamt - park.Aktuell > 20)){
            parkclass = 'warning';
-       }       
-       if (park.Status === 'Geschlossen') {
+       }
+       if (park.Status === 'Geschlossen' || park.Gesamt - park.Aktuell < 10) {
            parkclass = 'danger';
        }
        return parkclass;

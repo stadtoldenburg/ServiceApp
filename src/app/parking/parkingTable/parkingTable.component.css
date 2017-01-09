@@ -8,10 +8,22 @@ th, td {
     text-align: left;
     padding: 8px;
 }
-.info{background-color:    #d9edf7}
-.danger{background-color:  #f2dede}
-.success{background-color: #dff0d8}
-.warning{background-color: #fcf8e3}
+.info {
+    background-color: #e7f3fe;
+    border-left: 6px solid #2196F3;
+}
+.danger {
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+}
+.success {
+    background-color: #ddffdd;
+    border-left: 6px solid #4CAF50;
+}
+.warning {
+    background-color: #ffffcc;
+    border-left: 6px solid #ffeb3b;
+}
 .active{background-color:  #FFFCFA}
 th {
     background-color: #fecb00;
