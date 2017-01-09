@@ -13,7 +13,7 @@ declare var $:any;
 export class ParkingTableComponent implements OnInit {
 
 @ViewChild('sidenav') sidenav: MdSidenav;
-
+ public providerPicFileName: String = "TEST NAME FILE";
  Parkhaus:any;
  lastTime:any;
  currentPark={};
