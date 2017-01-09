@@ -5,7 +5,7 @@ table {
     width: 100%;
 }
 th, td {
-    text-align: left;
+    text-align: center;
     padding: 8px;
 }
 .info {
@@ -48,4 +48,8 @@ md-sidenav {
 }
 .red {
     color: Red;
+}
+
+.text-center{
+   text-align:center;
 }

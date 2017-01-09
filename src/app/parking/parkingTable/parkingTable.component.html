@@ -1,18 +1,35 @@
 <md-sidenav-layout>
-    <md-sidenav align="end" mode="side" #sidenav>
+    <md-sidenav align="end" mode="side" #sidenav style="background-color:#f8f5f0">
       <!--<md-tab-group>
         <md-tab>
           <template md-tab-label>Details</template>-->
+        
         <div  *ngIf="!(currentPark.Name == null)" >
-          <table class="text-center" >
+
+          <table width="100%"  >
           <tr>
-            <td  width="100%"  background="./assets/img/bg_tabelle3-1.jpg" 
-            style="background-repeat:no-repeat;background-position:left;background-color:#f8f5f0;text-align:center;">
-              <h3>{{currentPark.Name}}</h3>
+            <td>
+              <h2>{{currentPark.Name}}</h2>
             </td>
           </tr>
-        </table>  
-           <p><img src="./assets/img/pfeil-{{currentPark.Trend}}.gif"  height="30" width="30"/>Freie Plätze: {{currentPark.Gesamt-currentPark.Aktuell}} Status: {{currentPark.Status}}</p>
+          <!--<tr>
+           <td>-->
+          </table>
+            <table>
+              <tr >
+                <th>Freie Plätze</th>
+                <th>Trend</th>
+                <th>Status</th>
+              </tr>
+             <tr [ngClass]="currentPark | opencloseFilter" > 
+              <td [ngClass]="currentPark.Gesamt-currentPark.Aktuell | freiplatzeFilter"><h4>{{currentPark.Gesamt-currentPark.Aktuell}}</h4></td>
+              <td><img src="./assets/img/pfeil-{{currentPark.Trend}}.gif"  height="30" width="30"/></td>
+              <td [ngClass]="currentPark.Status | statusFilter "> <h4>{{currentPark.Status}}</h4></td>
+             </tr> 
+            </table>
+           <!--</td>
+          </tr>
+        </table>  -->
        </div>
           <app-carousel></app-carousel>
             <button md-raised-button (click)="sidenav.close()" color="accent">CLOSE</button>
@@ -41,7 +58,7 @@
     <th>Trend</th>
     <th>Status</th>
   </tr>
-  <tr *ngFor="let park of Parkhaus" (click)="showPark(park)" [hidden]="park.Name=='Ratsherren'|| park.Name=='Altes Gymnasium'" [ngClass]="park | opencloseFilter " >
+  <tr *ngFor="let park of Parkhaus" (click)="showPark(park)" [hidden]="park.Name=='Ratsherren'|| park.Name=='Altes Gymnasium'" [ngClass]="park | opencloseFilter" >
     <td>{{park.Name}} </td>
     <td [ngClass]="park.Gesamt-park.Aktuell | freiplatzeFilter">{{park.Gesamt-park.Aktuell}}</td>
     <td > <img src="./assets/img/pfeil-{{park.Trend}}.gif"  height="15" width="15"/></td>
