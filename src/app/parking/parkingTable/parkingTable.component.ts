@@ -2,7 +2,7 @@ import { Component, OnInit , ViewChild, ViewContainerRef } from '@angular/core';
 import {MdSidenav, MdDialog, MdDialogConfig} from "@angular/material";
 import { ParkingsService } from '../service/parking.service';
 import {Observable} from 'rxjs/Rx';
-
+import { CarouselComponent } from '../../components/carousel';
 declare var $:any;
 
 @Component({

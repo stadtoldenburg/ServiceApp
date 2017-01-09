@@ -15,7 +15,11 @@ import { ParkingTableComponent } from './parking/parkingTable';
 
 import { ParkingsService } from './parking/service/parking.service';
 
-import { ParkTablePipe } from './parking/parkingTable/pipe/parkTable-pipe.module';
+import { ParkTablePipe } from './parking/parkingTable/pipe';
+import { CarouselComponent } from './components/carousel';
+
+import { CarouselModule } from 'ng2-bootstrap/carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +28,8 @@ import { ParkTablePipe } from './parking/parkingTable/pipe/parkTable-pipe.module
     SettingsDialog,
     ParkingMapComponent
 ,
-    ParkingTableComponent
+    ParkingTableComponent,
+    CarouselComponent
 ],
    entryComponents: [
     ParkingComponent,
@@ -36,7 +41,8 @@ import { ParkTablePipe } from './parking/parkingTable/pipe/parkTable-pipe.module
     HttpModule,
     MaterialModule.forRoot(),
     ServiceAppRoutingModule,
-    ParkTablePipe
+    ParkTablePipe,
+    CarouselModule.forRoot()
   ],
   providers: [ParkingsService],
   bootstrap: [AppComponent]

@@ -7,6 +7,7 @@
            <p>{{currentPark.Name}}</p>
            <p><img src="./assets/img/pfeil-{{currentPark.Trend}}.gif"  height="30" width="30"/>Freie Plätze: {{currentPark.Gesamt-currentPark.Aktuell}} Status: {{currentPark.Status}}</p>
           </div>
+          <app-carousel></app-carousel>
             <button md-raised-button (click)="sidenav.close()" color="accent">CLOSE</button>
          
         </md-tab>
@@ -16,7 +17,7 @@
       </md-tab-group>
     </md-sidenav>
     <!--<md-grid-list cols="4" rowHeight="200px">-->
- <table class=" table table-bordered  text-center" >
+ <table class="text-center" >
    <tr>
      <td  width="100%"  background="./assets/img/bg_tabelle3-1.jpg" 
      style="background-repeat:no-repeat;background-position:left;background-color:#f8f5f0;text-align:center;">
