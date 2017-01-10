@@ -1,5 +1,5 @@
 <md-sidenav-layout>
-    <md-sidenav align="end" mode="side" #sidenav style="background-color:#f8f5f0">
+    <md-sidenav align="end" mode="over" #sidenav style="background-color:#f8f5f0">
       <!--<md-tab-group>
         <md-tab>
           <template md-tab-label>Details</template>-->
@@ -31,8 +31,8 @@
           </tr>
         </table>  -->
        </div>
-          <app-carousel [picFileName]="providerPicFileName"></app-carousel>
-            <button md-raised-button (click)="sidenav.close()" color="accent">CLOSE</button>
+          <app-carousel ></app-carousel>
+            <button md-raised-button (click)="closeSidenave()" color="accent">CLOSE</button>
             
         <!--</md-tab>
         <md-tab>
@@ -58,7 +58,7 @@
     <th>Trend</th>
     <th>Status</th>
   </tr>
-  <tr *ngFor="let park of Parkhaus" (click)="showPark(park)" [hidden]="park.Name=='Ratsherren'|| park.Name=='Altes Gymnasium'" [ngClass]="park | opencloseFilter" >
+  <tr *ngFor="let park of Parkhaus" (click)="showPark(park);appCarousel.carouselFromParkingtable(park.Name)" [hidden]="park.Name=='Ratsherren'|| park.Name=='Altes Gymnasium'" [ngClass]="park | opencloseFilter" >
     <td>{{park.Name}} </td>
     <td [ngClass]="park.Gesamt-park.Aktuell | freiplatzeFilter">{{park.Gesamt-park.Aktuell}}</td>
     <td > <img src="./assets/img/pfeil-{{park.Trend}}.gif"  height="15" width="15"/></td>

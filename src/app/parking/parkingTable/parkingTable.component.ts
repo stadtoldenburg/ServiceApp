@@ -1,4 +1,4 @@
-import { Component, OnInit , ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit , ViewChild, ViewContainerRef  } from '@angular/core';
 import {MdSidenav, MdDialog, MdDialogConfig} from "@angular/material";
 import { ParkingsService } from '../service/parking.service';
 import {Observable} from 'rxjs/Rx';
@@ -13,13 +13,14 @@ declare var $:any;
 export class ParkingTableComponent implements OnInit {
 
 @ViewChild('sidenav') sidenav: MdSidenav;
- public providerPicFileName: String = "TEST NAME FILE";
+@ViewChild(CarouselComponent) appCarousel;
+ public providerPicFileName: String = "slids";
  Parkhaus:any;
  lastTime:any;
  currentPark={};
  private subscription;
-  constructor(private service:ParkingsService) {
-  }
+ 
+ constructor(private service:ParkingsService) {}
 
   ngOnInit() {
     this.callService() ;
@@ -29,18 +30,22 @@ export class ParkingTableComponent implements OnInit {
     
   }
 showPark(park) {
-    this.currentPark=park;
+    this.currentPark=park; 
+    // this.appCarousel.carouselFromParkingtable();
     this.sidenav.open();
   }
+closeSidenave(){
+  this.sidenav.close();
+}
 
-  callService() {
+callService() {
     this.service.getParks().subscribe(
       (parkings) => {
         this.Parkhaus = parkings.Daten.Parkhaus;
         this.lastTime = parkings.Daten.Zeitstempel;  
       });
   }
-   ngOnDestroy() {
+ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 }
