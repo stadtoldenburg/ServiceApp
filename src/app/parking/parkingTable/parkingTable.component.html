@@ -8,9 +8,7 @@
 
           <table width="100%"  >
           <tr>
-            <td>
-              <h2>{{currentPark.Name}}</h2>
-            </td>
+            <td><h1> {{currentPark.Name}}</h1>Letzte Aktualisierung: {{lastTime}}</td>
           </tr>
           <!--<tr>
            <td>-->
@@ -41,13 +39,16 @@
       </md-tab-group>-->
     </md-sidenav>
     <!--<md-grid-list cols="4" rowHeight="200px">-->
- <table class="text-center" >
+ <table class="text-center" width="100%"  background="./assets/img/bg_tabelle3-1.jpg" 
+     style="background-repeat:no-repeat;background-position:left;background-color:#f8f5f0;text-align:center;" >
    <tr>
-     <td  width="100%"  background="./assets/img/bg_tabelle3-1.jpg" 
-     style="background-repeat:no-repeat;background-position:left;background-color:#f8f5f0;text-align:center;">
+     <td  >
       <h3>Parkleit-Informationssystem
       <p>der Stadt Oldenburg</p></h3>
      </td>
+   </tr>
+   <tr>
+     <td>Letzte Aktualisierung: {{lastTime}}</td>
    </tr>
  </table>     
 

@@ -42,7 +42,7 @@ callService() {
     this.service.getParks().subscribe(
       (parkings) => {
         this.Parkhaus = parkings.Daten.Parkhaus;
-        this.lastTime = parkings.Daten.Zeitstempel;  
+        this.lastTime = parkings.Daten.Zeitstempel;
       });
   }
 ngOnDestroy() {
