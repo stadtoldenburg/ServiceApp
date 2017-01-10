@@ -41,11 +41,10 @@ ngOnDestroy() {
 }
 
  ngOnInit() {}
-
-  public carouselFromParkingtable(name){
+ 
+ public carouselFromParkingtable(name){
     this.removeSlide();
     this.picFileName = name;
-    console.log(this.picFileName);
    if(this.picFileName === undefined){
      this.picFileName = 'City';
    }
