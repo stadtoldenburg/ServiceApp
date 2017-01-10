@@ -13,7 +13,7 @@ export class OpenCloseFilter  implements PipeTransform{
        if (!(park.Gesamt - park.Aktuell > 20)){
            parkclass = 'warning';
        }
-       if (park.Status === 'Geschlossen' || park.Gesamt - park.Aktuell < 10) {
+       if (park.Status === 'Geschlossen') {
            parkclass = 'danger';
        }
        return parkclass;
