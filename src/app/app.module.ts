@@ -20,29 +20,34 @@ import { CarouselComponent } from './components/carousel';
 
 import { CarouselModule } from 'ng2-bootstrap/carousel';
 
+import { AgmCoreModule} from 'angular2-google-maps/core';
+import { DirectionsMapDirective } from './parking/parkingMap/DirectionsMap.Directive';
 @NgModule({
-  declarations: [
+ declarations: [
     AppComponent,
     HomeComponent,
     ParkingComponent,
     SettingsDialog,
-    ParkingMapComponent
-,
+    ParkingMapComponent,
     ParkingTableComponent,
-    CarouselComponent
-],
-   entryComponents: [
+    CarouselComponent,
+    DirectionsMapDirective
+    ],
+ entryComponents: [
     ParkingComponent,
     SettingsDialog
-  ],
-  imports: [
+    ],
+ imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
     ServiceAppRoutingModule,
     ParkTablePipe,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDI4N7QdySwfP8aO0oWipZPbGKJHGAUI_M'
+    })
   ],
   providers: [ParkingsService],
   bootstrap: [AppComponent]

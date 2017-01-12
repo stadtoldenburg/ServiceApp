@@ -1,5 +1,7 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 import {MdSidenav, MdDialog, MdDialogConfig} from "@angular/material";
+import { SebmGoogleMap, SebmGoogleMapMarker, SebmGoogleMapInfoWindow } from
+'angular2-google-maps/core';
 
 
 @Component({
@@ -19,6 +21,12 @@ export class SettingsDialog {
   styleUrls: ['./parkingMap.component.css']
 })
 export class ParkingMapComponent {
+  title: string = 'My first angular2-google-maps project'
+  lat: number = 51.678418
+  lng: number = 4.333
+  zoom: number = 12
+  origin = { lat:53.1379184, lng:8.2064857};  // its a example aleatory position
+  destination = { lat: 53.047912, lng: 8.7187927 };  // its a example aleatory position
 
   dogs = [
     {rows: 2, name: "Mal", human: "Jeremy", age: 5},
