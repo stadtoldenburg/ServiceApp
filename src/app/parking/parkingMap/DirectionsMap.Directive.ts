@@ -8,16 +8,21 @@ declare var google: any;
 export class DirectionsMapDirective {
   @Input() origin;
   @Input() destination;
+  oriLat: number ;
+  oriLng: number ;
   constructor (private gmapsApi: GoogleMapsAPIWrapper) {}
   ngOnInit(){
-    console.log(this.origin);
-    
+    this.currentlocationFind();
+     
+  }
+  
+  renderDirection(){
     this.gmapsApi.getNativeMap().then(map => {
               var directionsService = new google.maps.DirectionsService;
               var directionsDisplay = new google.maps.DirectionsRenderer;
               directionsDisplay.setMap(map);
               directionsService.route({
-                      origin: {lat: this.origin.lat, lng: this.origin.lng},
+                      origin: {lat: this.oriLat, lng: this.oriLng},
                       destination: {lat: this.destination.lat, lng: this.destination.lng},
                       waypoints: [],
                       optimizeWaypoints: true,
@@ -32,4 +37,20 @@ export class DirectionsMapDirective {
 
     });
   }
+
+  currentlocationFind(){
+    if (!navigator.geolocation){
+        console.log("<p>Geolocation is not supported by your browser</p>");
+      }
+     if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition((location) => {
+               this.setLatLng(location.coords.latitude, location.coords.longitude);
+            });
+        }
+   }
+   setLatLng(lat:number, lng:number) {
+        this.oriLat = lat;
+        this.oriLng = lng;
+        this.renderDirection();
+    }
 }

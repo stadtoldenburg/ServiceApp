@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home';
 
 import { ParkingComponent } from './parking';
-import { ParkingMapComponent,SettingsDialog } from './parking/parkingMap';
+import { ParkingMapComponent } from './parking/parkingMap';
 import { ParkingTableComponent } from './parking/parkingTable';
 
 const routes: Routes = [

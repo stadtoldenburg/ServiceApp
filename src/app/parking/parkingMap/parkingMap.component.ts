@@ -1,58 +1,52 @@
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
-import {MdSidenav, MdDialog, MdDialogConfig} from "@angular/material";
-import { SebmGoogleMap, SebmGoogleMapMarker, SebmGoogleMapInfoWindow } from
-'angular2-google-maps/core';
+import { Component, ViewChild, ViewContainerRef, ElementRef, OnInit} from '@angular/core';
+import { SebmGoogleMap, SebmGoogleMapMarker, SebmGoogleMapInfoWindow } from'angular2-google-maps/core';
+import { addresShared } from '../service/addresShared.service';
 
-
-@Component({
-  selector: 'settings-dialog',
-  template: `
-    <label>Would you like dog pics every min???</label>
-    <md-slide-toggle></md-slide-toggle>
-  `
-})
-export class SettingsDialog {
-
-}
 
 @Component({
   selector: 'app-parkingMap',
   templateUrl: './parkingMap.component.html',
   styleUrls: ['./parkingMap.component.css']
 })
-export class ParkingMapComponent {
-  title: string = 'My first angular2-google-maps project'
-  lat: number = 51.678418
-  lng: number = 4.333
-  zoom: number = 12
-  origin = { lat:53.1379184, lng:8.2064857};  // its a example aleatory position
-  destination = { lat: 53.047912, lng: 8.7187927 };  // its a example aleatory position
+export class ParkingMapComponent  implements OnInit {
 
-  dogs = [
-    {rows: 2, name: "Mal", human: "Jeremy", age: 5},
-    {rows: 1, name: "Molly", human: "David", age: 5},
-    { rows: 1, name: "Sophie", human: "Alex", age: 8},
-    {rows: 2, name: "Taz", human: "Joey", age: '11 weeks'},
-    { rows: 1, name: "Kobe", human: "Igor", age: 5},
-    {rows: 2, name: "Porter", human: "Kara", age: 3},
-    { rows: 1, name: "Stephen", human: "Stephen", age: 8},
-    {rows: 1, name: "Cinny", human: "Jules", age: 3},
-    { rows: 1, name: "Hermes", human: "Kara", age: 3},
+  title: string = 'oldenburg';
+  oldenburgLat: number = 53.1432439 ;
+  oldenburgLng: number = 8.2214212 ;
+  zoom: number = 14;
+  destenyInput = 'Hbf/ZOB';
+
+  destination = { lat: 0.145186, lng: 0.223971 };
+  constructor(private addresService:addresShared) {}
+   ngOnInit() {
+     this.destenyInput = this.addresService.parkhausname;
+     this.serchAddres();
+   }
+   
+
+   serchAddres(){
+     for(var i =0;i<this.parkhauseAddreses.length;i++){
+       let parkHaus = this.parkhauseAddreses[i];
+       if(parkHaus.name===this.destenyInput){
+         this.destination.lat = Number(parkHaus.lat);
+         this.destination.lng = Number(parkHaus.lng);
+       }
+     }
+   }
+
+   // tslint:disable-next-line:member-ordering
+   parkhauseAddreses = [
+    {name: 'Waffenplatz', lat: '????',lng:'????'},
+    {name: 'City', lat: '22',lng:'22'},
+    {name: 'Galeria Kaufhof', lat: '22',lng:'22'},
+    {name: 'Pferdemarkt', lat: '22',lng:'22'},
+    {name: 'CCO Parkdeck 1', lat: '53.1443608',lng:'8.2157246'},
+    {name: 'CCO Parkdeck 2', lat: '22',lng:'22'},
+    {name: 'Hbf/ZOB', lat: '53.1432439',lng:'8.2214212'},
+    {name: 'Theaterwall', lat: '22',lng:'22'},
+    {name: 'Theatergarage', lat: '22',lng:'22'},
+    {name: 'Heiligengeist-Hoefe', lat: '22',lng:'22'},
+    {name: 'Schlosshoefe', lat: '22',lng:'22'},
   ];
-  @ViewChild('sidenav') sidenav: MdSidenav;
-  currentDog = {};
-  isDarkTheme = false;
 
-  constructor(public dialog: MdDialog, public vcr: ViewContainerRef) {}
-
-  openDialog() {
-    const config = new MdDialogConfig();
-    config.viewContainerRef = this.vcr;
-    this.dialog.open(SettingsDialog, config);
-  }
-
-  showDog(dog) {
-    this.currentDog = dog;
-    this.sidenav.open();
-  }
 }

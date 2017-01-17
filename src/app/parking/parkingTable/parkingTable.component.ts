@@ -1,6 +1,7 @@
 import { Component, OnInit , ViewChild, ViewContainerRef  } from '@angular/core';
 import {MdSidenav, MdDialog, MdDialogConfig} from "@angular/material";
 import { ParkingsService } from '../service/parking.service';
+import { addresShared } from '../service/addresShared.service';
 import {Observable} from 'rxjs/Rx';
 import { CarouselComponent } from '../../components/carousel';
 declare var $:any;
@@ -20,7 +21,7 @@ export class ParkingTableComponent implements OnInit {
  currentPark={};
  private subscription;
  
- constructor(private service:ParkingsService) {}
+ constructor(private service:ParkingsService,private addresService:addresShared) {}
 
   ngOnInit() {
     this.callService() ;
@@ -32,6 +33,7 @@ export class ParkingTableComponent implements OnInit {
 showPark(park) {
     this.currentPark=park; 
     // this.appCarousel.carouselFromParkingtable();
+    this.addresService.setAddres(park.Name);
     this.sidenav.open();
   }
 closeSidenave(){

@@ -10,10 +10,11 @@ import { ServiceAppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ParkingComponent } from './parking/parking.component';
-import { ParkingMapComponent,SettingsDialog } from './parking/parkingMap';
+import { ParkingMapComponent } from './parking/parkingMap';
 import { ParkingTableComponent } from './parking/parkingTable';
 
 import { ParkingsService } from './parking/service/parking.service';
+import { addresShared } from './parking/service/addresShared.service';
 
 import { ParkTablePipe } from './parking/parkingTable/pipe';
 import { CarouselComponent } from './components/carousel';
@@ -27,15 +28,13 @@ import { DirectionsMapDirective } from './parking/parkingMap/DirectionsMap.Direc
     AppComponent,
     HomeComponent,
     ParkingComponent,
-    SettingsDialog,
     ParkingMapComponent,
     ParkingTableComponent,
     CarouselComponent,
     DirectionsMapDirective
     ],
  entryComponents: [
-    ParkingComponent,
-    SettingsDialog
+    ParkingComponent
     ],
  imports: [
     BrowserModule,
@@ -49,7 +48,7 @@ import { DirectionsMapDirective } from './parking/parkingMap/DirectionsMap.Direc
       apiKey: 'AIzaSyDI4N7QdySwfP8aO0oWipZPbGKJHGAUI_M'
     })
   ],
-  providers: [ParkingsService],
+  providers: [ParkingsService,addresShared],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
