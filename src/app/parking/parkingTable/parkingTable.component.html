@@ -30,8 +30,12 @@
         </table>  -->
        </div>
           <app-carousel ></app-carousel>
+            
             <button md-raised-button (click)="closeSidenave()" color="accent">CLOSE</button>
-            <button md-raised-button routerLink="/parkingmap" color="accent">go To</button>
+            <div routerLink="/parkingmap">
+              <side-map></side-map>
+            </div>     
+
             
         <!--</md-tab>
         <md-tab>
@@ -60,7 +64,7 @@
     <th>Trend</th>
     <th>Status</th>
   </tr>
-  <tr *ngFor="let park of Parkhaus" (click)="showPark(park);appCarousel.carouselFromParkingtable(park.Name)" [hidden]="park.Name=='Ratsherren'|| park.Name=='Altes Gymnasium'" [ngClass]="park | opencloseFilter" >
+  <tr *ngFor="let park of Parkhaus" (click)="showPark(park);appCarousel.carouselFromParkingtable(park.Name);sideMap.serchAddres(park.Name)" [hidden]="park.Name=='Ratsherren'|| park.Name=='Altes Gymnasium'" [ngClass]="park | opencloseFilter" >
     <td>{{park.Name}} </td>
     <td [ngClass]="park.Gesamt-park.Aktuell | freiplatzeFilter">{{park.Gesamt-park.Aktuell}}</td>
     <td > <img src="./assets/img/pfeil-{{park.Trend}}.gif"  height="15" width="15"/></td>

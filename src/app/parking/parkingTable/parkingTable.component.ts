@@ -4,6 +4,7 @@ import { ParkingsService } from '../service/parking.service';
 import { addresShared } from '../service/addresShared.service';
 import {Observable} from 'rxjs/Rx';
 import { CarouselComponent } from '../../components/carousel';
+import { SideMapComponent } from './side-map';
 declare var $:any;
 
 @Component({
@@ -15,12 +16,13 @@ export class ParkingTableComponent implements OnInit {
 
 @ViewChild('sidenav') sidenav: MdSidenav;
 @ViewChild(CarouselComponent) appCarousel;
+@ViewChild(SideMapComponent) sideMap;
  public providerPicFileName: String = "slids";
  Parkhaus:any;
  lastTime:any;
  currentPark={};
  private subscription;
- 
+
  constructor(private service:ParkingsService,private addresService:addresShared) {}
 
   ngOnInit() {

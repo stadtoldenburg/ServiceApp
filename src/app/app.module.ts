@@ -23,6 +23,7 @@ import { CarouselModule } from 'ng2-bootstrap/carousel';
 
 import { AgmCoreModule} from 'angular2-google-maps/core';
 import { DirectionsMapDirective } from './parking/parkingMap/DirectionsMap.Directive';
+import { SideMapComponent } from './parking/parkingTable/side-map/side-map.component';
 @NgModule({
  declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { DirectionsMapDirective } from './parking/parkingMap/DirectionsMap.Direc
     ParkingMapComponent,
     ParkingTableComponent,
     CarouselComponent,
-    DirectionsMapDirective
+    DirectionsMapDirective,
+    SideMapComponent
     ],
  entryComponents: [
     ParkingComponent

@@ -32,9 +32,9 @@ th {
 
 
 md-sidenav-layout {
-height: 100% !important;
+height: 100vh !important;
 width: 100% !important;
-position: fixed !important;
+/*position: fixed !important;*/
 }
 
 md-sidenav {
