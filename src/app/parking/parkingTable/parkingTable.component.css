@@ -4,6 +4,30 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
+
+.bc-color {
+    background-color:#f8f5f0;
+}
+.dataHeaderTable{
+    background-repeat:no-repeat;
+    background-position:left;
+    background-color:#f8f5f0;
+    text-align:center;
+}
+@media screen and (min-width: 600px) {
+    .dataTable{
+        width: 600px;  
+        margin: auto;
+        background-color:#faf8f4;
+    }
+}
+@media screen and (max-width:599px) {
+    .dataTable{
+        width: 100%;  
+        margin: auto;
+        background-color:#faf8f4;
+    }
+}
 th, td {
     text-align: center;
     padding: 8px;

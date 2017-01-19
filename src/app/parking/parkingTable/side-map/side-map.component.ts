@@ -12,7 +12,7 @@ export class SideMapComponent implements OnInit {
  public title: string = 'oldenburg';
  public oldenburgLat: number = 53.1432439 ;
  public oldenburgLng: number = 8.2214212 ;
- public zoom: number = 13;
+ public zoom: number = 14;
  public destLat: number ;
  public destLng: number ;
  public oriLat: number;

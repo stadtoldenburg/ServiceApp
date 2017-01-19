@@ -1,17 +1,10 @@
 <md-sidenav-layout>
-    <md-sidenav align="end" mode="over" #sidenav style="background-color:#f8f5f0">
-      <!--<md-tab-group>
-        <md-tab>
-          <template md-tab-label>Details</template>-->
-        
+    <md-sidenav align="end" mode="over" #sidenav class="bc-color">        
         <div  *ngIf="!(currentPark.Name == null)" >
-
           <table width="100%"  >
           <tr>
             <td><h1> {{currentPark.Name}}</h1>Letzte Aktualisierung: {{lastTime}}</td>
           </tr>
-          <!--<tr>
-           <td>-->
           </table>
             <table>
               <tr >
@@ -25,52 +18,40 @@
               <td [ngClass]="currentPark.Status | statusFilter "> <h4>{{currentPark.Status}}</h4></td>
              </tr> 
             </table>
-           <!--</td>
-          </tr>
-        </table>  -->
        </div>
+
           <app-carousel ></app-carousel>
             
             <button md-raised-button (click)="closeSidenave()" color="accent">CLOSE</button>
             <div routerLink="/parkingmap">
               <side-map></side-map>
-            </div>     
-
-            
-        <!--</md-tab>
-        <md-tab>
-          <template md-tab-label>Feed</template>
-        </md-tab>
-      </md-tab-group>-->
+            </div>
     </md-sidenav>
-    <!--<md-grid-list cols="4" rowHeight="200px">-->
- <table class="text-center" width="100%"  background="./assets/img/bg_tabelle3-1.jpg" 
-     style="background-repeat:no-repeat;background-position:left;background-color:#f8f5f0;text-align:center;" >
-   <tr>
-     <td  >
-      <h3>Parkleit-Informationssystem
-      <p>der Stadt Oldenburg</p></h3>
-     </td>
-   </tr>
-   <tr>
-     <td>Letzte Aktualisierung: {{lastTime}}</td>
-   </tr>
- </table>     
-
-<table>
-  <tr>
-    <th>Parkhaus-Name</th>
-    <th>Freie Plätze</th>
-    <th>Trend</th>
-    <th>Status</th>
-  </tr>
-  <tr *ngFor="let park of Parkhaus" (click)="showPark(park);appCarousel.carouselFromParkingtable(park.Name);sideMap.serchAddres(park.Name)" [hidden]="park.Name=='Ratsherren'|| park.Name=='Altes Gymnasium'" [ngClass]="park | opencloseFilter" >
-    <td>{{park.Name}} </td>
-    <td [ngClass]="park.Gesamt-park.Aktuell | freiplatzeFilter">{{park.Gesamt-park.Aktuell}}</td>
-    <td > <img src="./assets/img/pfeil-{{park.Trend}}.gif"  height="15" width="15"/></td>
-    <td [ngClass]="park.Status | statusFilter ">{{park.Status}}</td>
-  </tr>
-  
-</table>
-    <!--</md-grid-list>-->
-  </md-sidenav-layout>
+  <div class="bc-color">    
+    <table class="text-center dataHeaderTable" width="100%"  background="./assets/img/bg_tabelle3-1.jpg">
+      <tr>
+        <td  >
+          <h3>Parkleit-Informationssystem
+          <p>der Stadt Oldenburg</p></h3>
+        </td>
+      </tr>
+      <tr>
+        <td>Letzte Aktualisierung: {{lastTime}}</td>
+      </tr>
+    </table>     
+    <table class="dataTable">
+      <tr>
+        <th>Parkhaus-Name</th>
+        <th>Freie Plätze</th>
+        <th>Trend</th>
+        <th>Status</th>
+      </tr>
+      <tr *ngFor="let park of Parkhaus" (click)="showPark(park);appCarousel.carouselFromParkingtable(park.Name);sideMap.serchAddres(park.Name)" [hidden]="park.Name=='Ratsherren'|| park.Name=='Altes Gymnasium'" [ngClass]="park | opencloseFilter" >
+        <td>{{park.Name}} </td>
+        <td [ngClass]="park.Gesamt-park.Aktuell | freiplatzeFilter">{{park.Gesamt-park.Aktuell}}</td>
+        <td > <img src="./assets/img/pfeil-{{park.Trend}}.gif"  height="15" width="15"/></td>
+        <td [ngClass]="park.Status | statusFilter ">{{park.Status}}</td>
+      </tr>
+    </table>
+  </div>
+</md-sidenav-layout>

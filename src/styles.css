@@ -3,7 +3,7 @@
 @import '~https://fonts.googleapis.com/icon?family=Material+Icons';
 
 body{
-    margin: 0px;
+    margin: 0px; 
 }
 
 md-toolbar-row {
@@ -36,6 +36,8 @@ md-grid-list {
 
 html * {
     font-family: Arial ;
+    
 }
 
+.md-sidenav-content{background-color:#f8f5f0;}
 
