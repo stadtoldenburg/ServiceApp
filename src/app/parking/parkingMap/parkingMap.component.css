@@ -1,0 +1,6 @@
+.sebm-google-map-container {
+height: 100vh !important;
+width: 100% !important;
+position: fixed !important;
+margin-top: -62px;
+}

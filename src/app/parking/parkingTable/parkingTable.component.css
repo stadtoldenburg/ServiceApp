@@ -7,13 +7,16 @@ table {
 
 .bc-color {
     background-color:#f8f5f0;
+    z-index: 0;
 }
 .dataHeaderTable{
     background-repeat:no-repeat;
     background-position:left;
     background-color:#f8f5f0;
     text-align:center;
+    background-image:  url(assets/img/bg_tabelle3-1.jpg);
 }
+.blur {-webkit-filter: blur(4px);filter: blur(4px);}
 @media screen and (min-width: 600px) {
     .dataTable{
         width: 600px;  
@@ -58,7 +61,7 @@ th {
 md-sidenav-layout {
 height: 100vh !important;
 width: 100% !important;
-/*position: fixed !important;*/
+position: fixed !important;
 }
 
 md-sidenav {
@@ -77,3 +80,4 @@ md-sidenav {
 .text-center{
    text-align:center;
 }
+
