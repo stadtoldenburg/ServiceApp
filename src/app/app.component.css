@@ -6,3 +6,12 @@ position: fixed !important;
 }
 
 
+    /*.md-toolbar {
+        height: 64px !important;
+    }*/
+
+@media (max-width: 960px) {
+    .md-toolbar {
+     height: 48px !important;
+    }
+}
