@@ -2,5 +2,10 @@
 height: 100vh !important;
 width: 100% !important;
 position: fixed !important;
-margin-top: -62px;
+margin-bottom: 90px;
+z-index: 0;
+}
+.page-title {
+    position: relative;
+    z-index: 2;
 }

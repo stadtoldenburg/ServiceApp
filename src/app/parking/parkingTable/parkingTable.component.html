@@ -1,4 +1,4 @@
-<md-sidenav-layout>
+<md-sidenav-layout fullscreen>
     <md-sidenav align="end" mode="over" #sidenav class="bc-color">        
         <div  *ngIf="!(currentPark.Name == null)" >
           <table width="100%"  >
@@ -18,17 +18,15 @@
               <td [ngClass]="currentPark.Status | statusFilter "> <h4>{{currentPark.Status}}</h4></td>
              </tr> 
             </table>
-       </div>
-
-          <app-carousel ></app-carousel>
-            
-            <button md-raised-button (click)="closeSidenave()" color="accent">CLOSE</button>
-            <div routerLink="/parkingmap">
-              <side-map></side-map>
-            </div>
-              
-  <br>  
-  <br>
+        </div>
+        <app-carousel ></app-carousel>
+        <button md-raised-button (click)="closeSidenave()" color="accent">CLOSE</button>
+        <div routerLink="/parkingmap">
+           <side-map></side-map>
+        </div>
+        <!--<br>
+        <br>
+        <br>-->
     </md-sidenav>
   <div class="bc-color">    
     <table class="text-center dataHeaderTable" width="100%"  background="./assets/img/bg_tabelle3-1.jpg">
@@ -55,9 +53,10 @@
         <td > <img src="./assets/img/pfeil-{{park.Trend}}.gif"  height="15" width="15"/></td>
         <td [ngClass]="park.Status | statusFilter ">{{park.Status}}</td>
       </tr>
+      <!--<br>
+      <br>
+      <br>-->
     </table>
   </div>
-  <br>
-  <br>
 
 </md-sidenav-layout>

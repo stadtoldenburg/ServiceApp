@@ -33,20 +33,4 @@ export class ParkingMapComponent  implements OnInit {
        }
      }
    }
-
-   // tslint:disable-next-line:member-ordering
-  //  parkhauseAddreses = [
-  //   {name: 'Waffenplatz', lat: '????',lng:'????'},
-  //   {name: 'City', lat: '22',lng:'22'},
-  //   {name: 'Galeria Kaufhof', lat: '22',lng:'22'},
-  //   {name: 'Pferdemarkt', lat: '22',lng:'22'},
-  //   {name: 'CCO Parkdeck 1', lat: '53.1443608',lng:'8.2157246'},
-  //   {name: 'CCO Parkdeck 2', lat: '22',lng:'22'},
-  //   {name: 'Hbf/ZOB', lat: '53.1432439',lng:'8.2214212'},
-  //   {name: 'Theaterwall', lat: '22',lng:'22'},
-  //   {name: 'Theatergarage', lat: '22',lng:'22'},
-  //   {name: 'Heiligengeist-Hoefe', lat: '22',lng:'22'},
-  //   {name: 'Schlosshoefe', lat: '22',lng:'22'},
-  // ];
-
 }

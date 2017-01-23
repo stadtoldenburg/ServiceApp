@@ -14,20 +14,7 @@ table {
     background-color:#f8f5f0;
     text-align:center;
 }
-@media screen and (min-width: 600px) {
-    .dataTable{
-        width: 600px;  
-        margin: auto;
-        background-color:#faf8f4;
-    }
-}
-@media screen and (max-width:599px) {
-    .dataTable{
-        width: 100%;  
-        margin: auto;
-        background-color:#faf8f4;
-    }
-}
+
 th, td {
     text-align: center;
     padding: 8px;
@@ -53,13 +40,41 @@ th {
     background-color: #fecb00;
     color: white;
 }
-
-
-md-sidenav-layout {
-height: 100vh !important;
-width: 100% !important;
-position: fixed !important;
+@media screen and (min-width: 600px) {
+    .dataTable{
+        width: 600px;  
+        margin: auto;
+        background-color:#faf8f4;
+    }
 }
+@media screen and (max-width:599px ) {
+    .dataTable{
+        width: 100%;  
+        margin: auto;
+        background-color:#faf8f4;
+    }
+}
+
+@media screen and (min-width: 961px) {
+    md-sidenav-layout {
+        margin-top: 64px;
+    }
+}
+@media screen and (max-width: 960px) {
+    md-sidenav-layout {
+     margin-top: 48px;
+    }
+}
+/*@media screen and (min-height: 735px) {
+    md-sidenav-layout {
+        margin-top: 64px;
+    }
+}
+@media screen and (max-height: 734px) {
+    md-sidenav-layout {
+     margin-top: 48px;
+    }
+}*/
 
 md-sidenav {
   width: 320px;
