@@ -1,33 +1,67 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <title>ServiceApp</title>
+  <base href="/">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- for ios 7 style, multi-resolution icon of 152x152 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- for ios 7 style, multi-resolution icons -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
-<link rel="apple-touch-icon" href="icon-152.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+
 <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
 <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+
 
 <meta name="apple-mobile-web-app-title" content="Oldenburg-Service">
 <meta name="msapplication-TileImage" content="tile-background.png">
-<meta name="msapplication-TileColor" content="#FF0000">
+<meta name="msapplication-TileColor" content="#FECB00">
 
-
-
-  <meta charset="utf-8">
-  
-  <title>ServiceApp</title>
-  <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
 </head>
 <body>
-  <app-root>Loading...</app-root>
-  
+  <app-root></app-root>
+
+  <div class="app-loader">
+    <img class="logo" src="assets/img/logo.jpg" alt="Logo">
+
+    <noscript>
+      <h4 style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica;">
+        Sorry, JavaScript needs to be enabled in order to run this application.
+      </h4>
+    </noscript>
+  </div>
+  <!--<script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }).catch(function(err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    }
+  </script>-->
 
 </body>
 </html>

@@ -1,14 +1,29 @@
-<sebm-google-map [latitude]="oldenburgLat"
-                 [longitude]="oldenburgLng"
-                 [zoom]="zoom">
+<md-sidenav-container fullscreen (swiperight)="showSidenave()"(swipeleft)="closeSidenave()">
+    <md-sidenav  mode="side" #sidenav class="bc-color"> 
+    <div class="sidenavPosition">   
+      <!--<button md-mini-fab class="btnClose" (click)="sidenav.toggle()">
+       <md-icon>close</md-icon>
+      </button>-->
+        <h1>
+        Oldenburg
+        </h1>
+      <button md-raised-button (click)="carePositsion()" color="accent">Mein Auto Position</button>
+      {{addresService.autoPosition.autoPoLat}},
+      {{addresService.autoPosition.autoPoLng}}
+      <button md-raised-button (click)="resetPos()" color="accent">Reset Mein Auto Position</button>
+    </div>
+    
+    </md-sidenav>
+    <button md-mini-fab class="btnOpen" (click)="sidenav.toggle();showSidenave()" >
+      <md-icon>{{btnSideNave}}</md-icon>
+    </button>
+    <sebm-google-map [latitude]="oldenburgLat"
+                        [longitude]="oldenburgLng"
+                        [zoom]="zoom">
 
-  <sebm-google-map-directions [origin]="origin" 
-                              [destination]="destination"
-                            
-  ></sebm-google-map-directions>
-</sebm-google-map>
-<div class="page-title">
-  <h1>
-   Oldenburg
-  </h1>
-</div>
+          <sebm-google-map-directions [origin]="origin" 
+                                      [destination]="destination">
+          </sebm-google-map-directions>
+        </sebm-google-map>   
+    
+</md-sidenav-container>

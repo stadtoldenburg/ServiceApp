@@ -15,11 +15,8 @@ table {
 
 }
 .dataHeaderTable{
-    
-    /*background-color:#f8f5f0;*/
     text-align:center;
 }
-
 th, td {
     text-align: center;
     padding: 8px;
@@ -85,52 +82,11 @@ th {
      margin-top: 48px;
     }
 }
+
 md-sidenav {
   width: 320px;
-}
-.orange {
-    color: Orange;
-}
-.greene {
-     color: Green; 
-}
-.red {
-    color: Red;
 }
 
 .text-center{
    text-align:center;
 }
-
-/*scrolling table*/
-
-
-        /*.dataTable thead, .dataTable tbody, .dataTable tr, .dataTable td, .dataTable th { display: block; }
-
-        .dataTable tr:after {
-            content: ' ';
-            display: block;
-            visibility: hidden;
-            clear: both;
-        }
-
-        .dataTable thead th {
-            height: 30px;
-
-            text-align: left;
-        }
-
-        .dataTable tbody {
-            height: 358px;
-            overflow-y: auto;
-        }
-
-        thead {
-            
-        }
-
-
-        .dataTable tbody td, .dataTable thead th {
-            width: 25%;
-            float: left;
-        }*/

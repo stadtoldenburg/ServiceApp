@@ -1,6 +1,7 @@
 import { Component, ViewChild, ViewContainerRef, ElementRef, OnInit} from '@angular/core';
-
+import {MdSidenav, MdDialog, MdDialogConfig} from "@angular/material";
 import { addresShared } from '../service/addresShared.service';
+import { autoPosition } from '../service/autoPosition';
 import { ADDRESES } from '../service/data/parkHauseAddreses';
 
 @Component({
@@ -9,23 +10,40 @@ import { ADDRESES } from '../service/data/parkHauseAddreses';
   styleUrls: ['./parkingMap.component.css']
 })
 export class ParkingMapComponent  implements OnInit {
-
+  @ViewChild('sidenav') sidenav: MdSidenav;
+  showside :boolean =false;
   title: string = 'oldenburg';
   oldenburgLat: number = 53.1432439 ;
   oldenburgLng: number = 8.2214212 ;
   zoom: number = 14;
   destenyInput = '';
   parkhauseAddreses = ADDRESES;
-  destination = { lat: 0.145186, lng: 0.223971 };
+  destination = { lat: 0.0, lng: 0.0 };
+  autoPosition:any;
+  btnSideNave: string='chevron_right';
   constructor(private addresService:addresShared) {}
    ngOnInit() {
      this.destenyInput = this.addresService.parkhausname;
      this.serchAddres();
    }
-   
+
+   carePositsion(){
+    if (!navigator.geolocation){
+        console.log("<p>Geolocation is not supported by your browser</p>");
+      }
+     if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition((location) => {
+              this.autoPosition = {lat:location.coords.latitude,lng:location.coords.longitude};
+              this.addresService.setAutoPosition(this.autoPosition)
+            });
+        }
+   }
+   resetPos(){
+     this.addresService.resetCarePositsion();
+   }
 
    serchAddres(){
-     for(var i =0;i<this.parkhauseAddreses.length;i++){
+     for(let i =0;i<this.parkhauseAddreses.length;i++){
        let parkHaus = this.parkhauseAddreses[i];
        if(parkHaus.name===this.destenyInput){
          this.destination.lat = Number(parkHaus.lat);
@@ -33,4 +51,12 @@ export class ParkingMapComponent  implements OnInit {
        }
      }
    }
+   showSidenave() {
+    if(this.sidenav._opened==true){
+      this.btnSideNave = 'chevron_left';
+   }else{
+     this.btnSideNave = 'chevron_right';
+   }
+  }
+
 }

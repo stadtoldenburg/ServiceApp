@@ -10,19 +10,19 @@ export class DirectionsMapDirective {
   @Input() destination;
   oriLat: number ;
   oriLng: number ;
+  currentPosition: any;
   constructor (private gmapsApi: GoogleMapsAPIWrapper) {}
   ngOnInit(){
     this.currentlocationFind();
-     
   }
-  
+
   renderDirection(){
     this.gmapsApi.getNativeMap().then(map => {
               var directionsService = new google.maps.DirectionsService;
               var directionsDisplay = new google.maps.DirectionsRenderer;
               directionsDisplay.setMap(map);
               directionsService.route({
-                      origin: {lat: this.oriLat, lng: this.oriLng},
+                      origin: {lat: this.currentPosition.lat, lng: this.currentPosition.lng},
                       destination: {lat: this.destination.lat, lng: this.destination.lng},
                       waypoints: [],
                       optimizeWaypoints: true,
@@ -44,13 +44,11 @@ export class DirectionsMapDirective {
       }
      if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition((location) => {
-               this.setLatLng(location.coords.latitude, location.coords.longitude);
+              this.currentPosition = {lat:location.coords.latitude,lng:location.coords.longitude};
+              if(!(this.destination.lat == 0.0)){
+                this.renderDirection();
+              }
             });
         }
    }
-   setLatLng(lat:number, lng:number) {
-        this.oriLat = lat;
-        this.oriLng = lng;
-        this.renderDirection();
-    }
 }
