@@ -58,5 +58,13 @@ export class ParkingMapComponent  implements OnInit {
      this.btnSideNave = 'chevron_right';
    }
   }
+  closeSidenave(){
+    this.sidenav.close();
+    if(this.sidenav._opened==true){
+      this.btnSideNave = 'chevron_left';
+   }else{
+     this.btnSideNave = 'chevron_right';
+   }
+  }
 
 }

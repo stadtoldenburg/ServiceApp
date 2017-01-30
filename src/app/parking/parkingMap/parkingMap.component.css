@@ -3,6 +3,7 @@ height: 100vh !important;
 width: 100% !important;
 position: fixed !important;
 margin-bottom: 90px;
+
 z-index: 0;
 }
 md-sidenav {
@@ -22,4 +23,7 @@ md-sidenav {
   position: absolute;
   left: 320px;
   top: 80px;
+}
+.bc-color {
+    background-color:#f8f5f0;
 }

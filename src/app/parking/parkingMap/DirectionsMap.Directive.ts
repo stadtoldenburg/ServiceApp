@@ -15,7 +15,6 @@ export class DirectionsMapDirective {
   ngOnInit(){
     this.currentlocationFind();
   }
-
   renderDirection(){
     this.gmapsApi.getNativeMap().then(map => {
               var directionsService = new google.maps.DirectionsService;
@@ -34,10 +33,8 @@ export class DirectionsMapDirective {
                                   window.alert('Directions request failed due to ' + status);
                                 }
               });
-
     });
   }
-
   currentlocationFind(){
     if (!navigator.geolocation){
         console.log("<p>Geolocation is not supported by your browser</p>");
